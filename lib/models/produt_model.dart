@@ -3,7 +3,7 @@ class ProdutModel {
   final String title;
   final double prince;
   final String description;
-  final String image;
+  final String image
   final RatingModel rating;
 
   ProdutModel({
