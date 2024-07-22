@@ -1,4 +1,4 @@
-class ProdutModel {
+class ProductModel {
   final int id;
   final String title;
   final double prince;
@@ -6,7 +6,7 @@ class ProdutModel {
   final String image;
   final RatingModel rating;
 
-  ProdutModel({
+  ProductModel({
     required this.id,
     required this.title,
     required this.prince,
@@ -15,8 +15,8 @@ class ProdutModel {
     required this.rating,
   });
 
-  factory ProdutModel.fromJson(jsonData) {
-    return ProdutModel(
+  factory ProductModel.fromJson(jsonData) {
+    return ProductModel(
         id: jsonData['id'],
         title: jsonData['title'],
         prince: jsonData['price'],
