@@ -1,7 +1,7 @@
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/produt_model.dart';
 
-class CategoryService {
+class GetCategoryService {
   Future<List<ProductModel>> getCategoriesProducts(
       {required String categoryName}) async {
     List<dynamic> data = await Api()

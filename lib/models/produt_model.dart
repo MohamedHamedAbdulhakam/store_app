@@ -22,7 +22,7 @@ class ProductModel {
         prince: jsonData['price'],
         description: jsonData['description'],
         image: jsonData['image'],
-        rating: RatingModel.fromJson(jsonData('rating')));
+        rating: RatingModel.fromJson(jsonData('rating')));//map of rating
   }
 }
 
