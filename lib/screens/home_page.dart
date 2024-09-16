@@ -11,7 +11,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.cart))
+          IconButton(
+              onPressed: () {}, icon: const Icon(FontAwesomeIcons.cartPlus))
         ],
         backgroundColor: Colors.white,
         title: Center(
@@ -22,6 +23,41 @@ class HomePage extends StatelessWidget {
             fontSize: 20,
           )),
         )),
+      ),
+      body: Container(
+        width: 200,
+        height: 120,
+        child: const Card(
+          color: Colors.white,
+          elevation: 6,
+          shape: BeveledRectangleBorder(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Handbag',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(r'$33'),
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
