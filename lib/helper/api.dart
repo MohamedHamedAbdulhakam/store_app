@@ -15,6 +15,7 @@ class Api {
             'there is a problem with status code ${response.statusCode}');
       }
     }
+  }
 
     Future<dynamic> post({
       required String urL,
@@ -35,6 +36,7 @@ class Api {
             "there was a problem with status code ${response.statusCode}with body ${response.body}");
       }
     }
+    
 
     Future<dynamic> put({
       required String urL,
@@ -57,4 +59,4 @@ class Api {
       }
     }
   }
-}
+
