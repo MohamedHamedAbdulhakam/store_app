@@ -2,9 +2,6 @@ import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/produt_model.dart';
 
 class UpdateProductService {
-
-
-
   Future<ProductModel> updateProduct(
       {required String title,
       required String price,
@@ -21,6 +18,4 @@ class UpdateProductService {
     });
     return ProductModel.fromJson(data);
   }
-
-
 }
