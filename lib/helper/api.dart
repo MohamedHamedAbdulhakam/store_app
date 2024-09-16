@@ -32,4 +32,25 @@ class Api {
           "there was a problem with status code ${response.statusCode}with body ${response.body}");
     }
   }
+
+  Future<dynamic> put({
+    required String urL,
+    @required dynamic body,
+    @required String? taken,
+  }) async {
+    Map<String, String> headers = {};
+    headers.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
+    if (taken != null) {
+      headers.addAll({'Authorization': 'Bearer $taken'});
+    }
+    http.Response response =
+        await http.post(Uri.parse(urL), body: body, headers: headers);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> data = jsonDecode(response.body);
+      return data;
+    } else {
+      throw Exception(
+          "there was a problem with status code ${response.statusCode}with body ${response.body}");
+    }
+  }
 }
