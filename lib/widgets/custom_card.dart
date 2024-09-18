@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/produt_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
-
+   CustomCard({required this.product,super.key});
+  ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -11,27 +12,27 @@ class CustomCard extends StatelessWidget {
         Container(
           width: 200,
           height: 120,
-          child: const Card(
+          child:  Card(
             color: Colors.white,
             elevation: 6,
-            shape:  BeveledRectangleBorder(),
+            shape: const BeveledRectangleBorder(),
             child: Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                     Text(
-                      'Handbag',
-                      style: TextStyle(color: Colors.grey),
+                    Text(
+                      product.title.substring(0,6),
+                      style: const TextStyle(color: Colors.grey),
                     ),
-                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 2),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 2),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(r'$33'),
-                          Icon(
+                          Text(r'$' '${product.price.toString()}'),
+                          const Icon(
                             Icons.favorite,
                             color: Colors.red,
                           )
@@ -46,7 +47,7 @@ class CustomCard extends StatelessWidget {
             left: 85,
             bottom: 150,
             child: Image.network(
-              'https://up.yimg.com/ib/th?id=OIP.M56Z_XU7r_UeDFR05bfkzwHaE7&pid=Api&rs=1&c=1&qlt=95&w=152&h=101',
+              product.image,
               height: 100,
               width: 100,
             ))
